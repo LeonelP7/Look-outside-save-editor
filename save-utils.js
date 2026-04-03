@@ -30,7 +30,9 @@ function backupSave(filePath){
   .toISOString()
   .replace(/[:.]/g, '-');
   const newName = `${baseName}${timeStamp}${extension}`;
-  const ruteDest = path.join(__dirname, 'backups');
+  const isPackaged = __dirname.includes('app.asar');
+  const baseDir = isPackaged ? path.dirname(process.execPath) : __dirname;
+  const ruteDest = path.join(baseDir, 'backups');
   const finalRute = path.join(ruteDest,newName);
 
   // Crear la carpeta backups en caso de que no exista
