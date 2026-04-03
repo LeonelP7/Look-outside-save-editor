@@ -30,6 +30,8 @@ function initInfoPanel(data) {
 
     document.getElementById('guardar-btn').addEventListener('click', () => {
         window.api.writeSave(currentSlot, data);
+        saveData = window.api.readSave(currentSlot);
+        initUi(saveData);
     });
 }
 
@@ -66,8 +68,8 @@ function initActorsSection(data) {
             `;
 
             const fields = [
-                { id: 'actor-hp',    key: '_hp' },
-                { id: 'actor-mp',    key: '_mp' },
+                { id: 'actor-hp', key: '_hp' },
+                { id: 'actor-mp', key: '_mp' },
                 { id: 'actor-level', key: '_level' },
             ];
 
