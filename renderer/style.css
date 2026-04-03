@@ -1,0 +1,395 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    background: #1e1e2e;
+    color: #cdd6f4;
+}
+
+/* ── Layout principal ── */
+
+#app {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+#sidebar {
+    flex: 0 0 180px;
+    background: #181825;
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+    border-right: 1px solid #313244;
+}
+
+#sidebar h2 {
+    color: #cba6f7;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0 16px 16px;
+    border-bottom: 1px solid #313244;
+    margin-bottom: 8px;
+}
+
+.nav-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    color: #bac2de;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    border-left: 3px solid transparent;
+    transition: background 0.15s, color 0.15s;
+}
+
+.nav-btn:hover {
+    background: #313244;
+    color: #cdd6f4;
+}
+
+.nav-btn.active {
+    background: #313244;
+    color: #cba6f7;
+    border-left-color: #cba6f7;
+}
+
+#content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* ── Info panel ── */
+
+#info-panel {
+    flex: 0 0 auto;
+    background: #181825;
+    border-bottom: 1px solid #313244;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+#info-panel span {
+    font-size: 13px;
+    color: #a6adc8;
+}
+
+#info-panel span b {
+    color: #cdd6f4;
+}
+
+/* ── Edit panel ── */
+
+#edit-panel {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.section {
+    display: none;
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.section.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Sección Actores ── */
+
+#section-actores {
+    flex-direction: row;
+    padding: 0;
+    gap: 0;
+}
+
+#actors-list {
+    flex: 0 0 180px;
+    background: #181825;
+    border-right: 1px solid #313244;
+    overflow-y: auto;
+    padding: 8px 0;
+}
+
+.actorId-btn {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    border: none;
+    background: transparent;
+    color: #bac2de;
+    cursor: pointer;
+    text-align: left;
+    font-size: 13px;
+    border-left: 3px solid transparent;
+    transition: background 0.15s;
+}
+
+.actorId-btn:hover {
+    background: #313244;
+    color: #cdd6f4;
+}
+
+.actorId-btn.active {
+    background: #313244;
+    color: #89b4fa;
+    border-left-color: #89b4fa;
+}
+
+#actor-detail {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#actor-detail span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #cba6f7;
+    margin-bottom: 8px;
+}
+
+#actor-detail label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #a6adc8;
+}
+
+/* ── Sección Party ── */
+
+#party-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 300px;
+}
+
+#party-detail label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #a6adc8;
+}
+
+/* ── Sección Items / Gear ── */
+
+#items-search, #gear-search {
+    margin-bottom: 16px;
+}
+
+#item-search-input, #gear-search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px 12px;
+    background: #313244;
+    border: 1px solid #45475a;
+    border-radius: 6px;
+    color: #cdd6f4;
+    font-size: 13px;
+    outline: none;
+}
+
+#item-search-input:focus, #gear-search-input:focus {
+    border-color: #cba6f7;
+}
+
+#item-search-results, #gear-search-results {
+    background: #313244;
+    border: 1px solid #45475a;
+    border-radius: 6px;
+    margin-top: 4px;
+    max-width: 400px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.search-result {
+    padding: 8px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #cdd6f4;
+    transition: background 0.1s;
+}
+
+.search-result:hover {
+    background: #45475a;
+}
+
+#items-list, #gear-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#items-list div, #gear-list div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 10px;
+    background: #313244;
+    border-radius: 6px;
+}
+
+#items-list span, #gear-list span {
+    flex: 1;
+    font-size: 13px;
+    color: #cdd6f4;
+}
+
+/* ── Inputs ── */
+
+input[type="number"], input[type="text"] {
+    background: #1e1e2e;
+    border: 1px solid #45475a;
+    border-radius: 4px;
+    color: #cdd6f4;
+    padding: 4px 8px;
+    font-size: 13px;
+    width: 80px;
+    outline: none;
+}
+
+input[type="number"]:focus, input[type="text"]:focus {
+    border-color: #89b4fa;
+}
+
+#item-search-input, #gear-search-input {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* ── Setup / Slot selector ── */
+
+#setup-screen, #slot-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 16px;
+    padding: 40px;
+    text-align: center;
+}
+
+#setup-screen h1 {
+    color: #cba6f7;
+    font-size: 24px;
+}
+
+#setup-screen p {
+    color: #a6adc8;
+    font-size: 14px;
+}
+
+.setup-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 500px;
+    align-self: center;
+}
+
+.setup-field label {
+    font-size: 13px;
+    color: #a6adc8;
+}
+
+.setup-field input {
+    width: 100%;
+    padding: 10px 12px;
+    background: #313244;
+    border: 1px solid #45475a;
+    border-radius: 6px;
+    color: #cdd6f4;
+    font-size: 13px;
+    outline: none;
+}
+
+.setup-field input:focus {
+    border-color: #cba6f7;
+}
+
+.setup-error {
+    color: #f38ba8;
+    font-size: 13px;
+}
+
+#setup-btn {
+    padding: 10px 28px;
+    background: #cba6f7;
+    color: #1e1e2e;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.15s;
+}
+
+#setup-btn:hover {
+    background: #b48ef0;
+}
+
+#slot-selector h2 {
+    color: #cba6f7;
+    margin-bottom: 8px;
+}
+
+.slot-btn {
+    padding: 10px 24px;
+    background: #313244;
+    color: #cdd6f4;
+    border: 1px solid #45475a;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: background 0.15s;
+}
+
+.slot-btn:hover {
+    background: #45475a;
+}
+
+/* ── Botones ── */
+
+button {
+    cursor: pointer;
+}
+
+#guardar-btn {
+    margin-left: auto;
+    padding: 8px 20px;
+    background: #a6e3a1;
+    color: #1e1e2e;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background 0.15s;
+}
+
+#guardar-btn:hover {
+    background: #94d39a;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Look Outside Editor</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="app">
+            <div id="sidebar">
+                <button class="nav-btn" data-section="actores">Actors</button>
+                <button class="nav-btn" data-section="party">Party</button>
+                <button class="nav-btn" data-section="items">Items</button>
+                <button class="nav-btn" data-section="gear">Gear</button>
+            </div>
+            <div id="content">
+                <div id="info-panel">
+                    <button id="guardar-btn">Guardar</button>
+                </div>
+                <div id="edit-panel">
+                    <div class="section" id="section-actores">
+                        <div id="actors-list"></div>
+                        <div id="actor-detail"></div>
+                    </div>
+                    <div class="section" id="section-party">
+                        <div id="party-detail"></div>
+                    </div>
+                    <div class="section" id="section-items">Items aquí</div>
+                    <div class="section" id="section-gear">Gear aquí</div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="renderer.js"></script>
+</html>

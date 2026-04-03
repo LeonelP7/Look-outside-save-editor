@@ -1,0 +1,37 @@
+{
+  "name": "look-outside-editor",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "lz-string": "^1.5.0"
+  },
+  "devDependencies": {
+    "electron": "^41.1.1",
+    "electron-builder": "^26.8.1"
+  },
+  "build": {
+    "appId": "com.lookoutside.editor",
+    "productName": "Look Outside Editor",
+    "forceCodeSigning": false,
+    "win": {
+      "target": "portable"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**",
+      "save-utils.js",
+      "game-data.js",
+      "package.json"
+    ]
+  }
+}
